@@ -1,0 +1,66 @@
+---
+title: "Functions"
+author: "JM_Wiggins"
+date: '2022-06-07'
+output: html_document
+---
+
+## Functions
+### Syntax
+define using `def` keyword, semicolon after function_name() is required!
+```{python eval=FALSE}
+def function_name(argument1, argument2): #semicolon here
+  what_to_evaluate
+  return output ##when you want to send the output to another part of the code
+  
+def function_name2(argument1, argument2):
+  what_to_evaluate  
+  print(output) #when you want to show the output to a human
+```
+if there is no `return` or `print` the function will return `none`  
+  
+Note: `print` is a function you call; `return` is a python keyword  
+[list of python keywords](https://www.w3schools.com/python/python_ref_keywords.asp) 
+More [keyword info](https://realpython.com/python-keywords/)  
+get a list of python keywords in python session:
+```{python eval=FALSE}
+help("keywords")
+```
+
+
+
+Function Example:
+```{python}
+def hyp_sq(a,b):
+    sum = a**2 + b**2
+    return sum
+
+
+print(hyp_sq(918,846)) #to print the results to the console
+```
+
+if `what_to_evaluate` is an `if`, `else`, `elif`, or a `for` loop a semicolon must also be included after the `what_to_evaluate`
+```{python eval=FALSE}
+def function_name(argument1, argument2): #semicolon here
+  if what_to_evaluate: #semicolon here too
+    return output 
+  elif evaluate_something_else: #semicolon here too
+    return different_output
+  
+  
+```
+
+Example:
+```{python}
+def animalNames(letter): #semicolon
+  if letter == 'a': #semicolon
+    return 'Aardvark'
+  elif letter == 'b': #semicolon
+    return 'Baboon'
+  elif letter == 'c': #semicolon
+    return 'Caracal'
+
+  
+print(animalNames('a')) #note that a had to be in '' to work
+```
+

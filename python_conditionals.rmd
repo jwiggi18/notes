@@ -1,0 +1,78 @@
+---
+title: "Control Flow"
+author: "JM_Wiggins"
+date: '2022-06-07'
+output: html_document
+---
+
+# Python control flow: conditional logic
+## if, elif, else <- are all python [keywords](https://realpython.com/python-keywords/)  
+  
+## `if` starts a conditional statement  
+in spoken language a conditional statement looks something like:  
+"If my alarm goes off I will make it on time."  
+It is assumed that if my alarm doesn't go off I will not make it on time.  
+Syntax:
+```{python eval=FALSE}
+#imaginary example relating the statement above 
+if alarm_goes_off: #TRUE or FALSE
+  will_be_on_time #if TRUE statement is executed; if FALSE statement is skipped
+  
+
+#what is happening
+if what_to_evaluate: #semicolon
+  return output #indented
+
+
+```
+There must be a semicolon after `what_to_do`  
+  and the next line must be indented  
+  
+A few examples:
+```{python}
+a = 10
+b = 5
+
+if a > b: #statement is TRUE
+  print('yes') #action is executed
+  
+if a == b: #statement is FALSE
+  print('yes') #action is skipped (not executed)
+```
+This is confusing, which statement produced the 'yes'?  
+To clarify add `else`  
+
+## `else` is executed if all other statements are false. It has no conditional
+```{python}
+a = 10
+b = 5
+
+if a == b: #statement is FALSE
+  print('yes') #action is skipped (not executed)
+else: 
+  print('no')
+```
+  
+## `elif` can only be used after an `if` statement and can be used as many times as needed  
+```{python eval=FALSE}
+if what_to_evaluate: #semicolon here too
+  return output 
+elif evaluate_something_else: #semicolon here too
+  return different_output
+
+
+```
+
+`elif` Example:
+```{python}
+letter = 'b'
+
+if letter == 'a': #semicolon
+  print('Aardvark')
+elif letter == 'b': #semicolon
+  print('Baboon')
+elif letter == 'c': #semicolon
+  print('Caracal')
+
+```
+  
