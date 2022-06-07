@@ -3,6 +3,10 @@ coding notes to self, maybe eventually turned into teaching notes
 
 [Intro python](https://jwiggi18.github.io/notes/Intro_python_notes.html) (largely from W3 schools with some rearrangement and my 'notes to self') 
 
+[python_conditionals](https://jwiggi18.github.io/notes/python_conditionals.html)
+
+[python_functions](https://jwiggi18.github.io/notes/python_functions.html)
+
 currently only notes about python
 
 to see some info on R: https://github.com/jwiggi18/intro_genomics
