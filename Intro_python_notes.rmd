@@ -1,0 +1,149 @@
+---
+title: "python notes"
+author: "JM_Wiggins"
+date: '2022-06-03'
+output: html_document
+---
+
+## Python command line
+to enter: $python3
+to exit: exit()
+to exit
+
+to create a python file use extension `.py`
+to execute:
+
+while in python command line (have done the steps above)
+```{python eval=FALSE}
+myfile.py
+```
+
+
+while outside of the python command line (have not done the steps above)
+```{python eval=FALSE}
+python3 myfile.py
+```
+
+
+## Indentation
+indicates a code block
+`print()` must be indented to be recognized as part of the `if` statement
+number of spaces in the indentation must be >1 and must be consistent for the whole code block
+```{python eval=FALSE}
+#correct
+if 5 > 2:
+  print("Five is greater than two")
+  
+#incorrect
+if 5 > 2:
+print("Five is greater than two")
+
+#correct
+if 0 < 3:
+  print("duh")
+  print("of course zero is less than 3")
+
+#incorrect
+if 0 > 3:
+  print("nope")
+    print("this indentation is inconsistent")
+```
+
+
+## Variables
+assign with `=`
+```{python}
+x = 22
+#python is case sensative, using a capitol X will create a different variable
+X = "Capitol X"
+#X will not overwrite x
+
+cow = "Holy Cow!"
+#note single or double quates can be used the above is equivalent to 
+#cow = 'Holy Cow!'
+
+print(x)
+print(X)
+print(cow)
+
+```
+
+### Variable [types (classes)](https://www.w3schools.com/python/python_datatypes.asp)
+to get a variable type (class):
+```{python}
+print(type(x))
+print(type(cow))
+```
+
+### Variable names
+must start with a letter (e.g. `a`) or an underscore `_`
+```{python}
+#a few examples
+myvar = "works"
+_myvar = "also works"
+myvar2 = "works 2"
+```
+
+####Camel Case
+```{python}
+#lowerUpperUpperUpper etc
+myVariableName = "Camel"
+```
+
+####Snake Case
+```{python}
+#word_underscore_word_underscore
+my_variable_name = "Snake"
+```
+
+Above `x` is an integer and `y` is a string automatically.
+To specify the data type use casting
+
+#### Casting
+```{python}
+x = str(3)    # x will be the string '3'
+y = int(3)    # y will be the integer 3
+z = float(3)  # z will be 3.0 (contains a decimal)
+```
+
+### Multiple Variables
+```{python}
+a, b, c = "Alligator", "Baboon", "Crocadile" 
+print(a)
+print(b)
+print(c)
+```
+
+### Unpack lists or tuples
+```{python}
+yum = ["mango", "strawberries", "pineapple"]
+m, s, p = yum
+print(m)
+print(s)
+print(p)
+```
+
+Can also `print` the whole list
+```{python}
+print(m, s, p)
+```
+
+To keep the words from runnign together add spaces to the original assignments
+```{python}
+yum = ["mango ", "strawberries ", "pineapple "]
+m, s, p = yum
+print(m, s, p)
+```
+
+## Comments
+```{python}
+#will not be executed
+
+"""
+create a string literal for 
+easy multiline comments
+python will ignore this
+because it wasn't assigned to a variable
+"""
+```
+
