@@ -147,3 +147,5 @@ because it wasn't assigned to a variable
 """
 ```
 
+## [Operators](https://www.w3schools.com/python/python_operators.asp)
+

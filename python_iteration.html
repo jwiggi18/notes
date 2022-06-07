@@ -11,9 +11,9 @@
 
 <meta name="author" content="JM_Wiggins" />
 
-<meta name="date" content="2022-06-03" />
+<meta name="date" content="2022-06-07" />
 
-<title>python notes</title>
+<title>Iteration</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -359,143 +359,127 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">python notes</h1>
+<h1 class="title toc-ignore">Iteration</h1>
 <h4 class="author">JM_Wiggins</h4>
-<h4 class="date">2022-06-03</h4>
+<h4 class="date">2022-06-07</h4>
 
 </div>
 
 
-<div id="python-command-line" class="section level2">
-<h2>Python command line</h2>
-<p>to enter: $python3 to exit: exit() to exit</p>
-<p>to create a python file use extension <code>.py</code> to
-execute:</p>
-<p>while in python command line (have done the steps above)</p>
-<pre class="python"><code>myfile.py</code></pre>
-<p>while outside of the python command line (have not done the steps
-above)</p>
-<pre class="python"><code>python3 myfile.py</code></pre>
-</div>
-<div id="indentation" class="section level2">
-<h2>Indentation</h2>
-<p>indicates a code block <code>print()</code> must be indented to be
-recognized as part of the <code>if</code> statement number of spaces in
-the indentation must be &gt;1 and must be consistent for the whole code
-block</p>
-<pre class="python"><code>#correct
-if 5 &gt; 2:
-  print(&quot;Five is greater than two&quot;)
+<div id="python-iteration" class="section level2">
+<h2>Python Iteration</h2>
+<p>iteration - a set of instructions is repeated until a specific
+condition is met<br />
+loop - a block of code the will repeat over and over again</p>
+<div id="for-loop" class="section level3">
+<h3><code>for</code> loop</h3>
+<p>Uses keywords <code>for</code> and <code>in</code><br />
+Syntax:</p>
+<pre class="python"><code>for item in containter:
+  do_something</code></pre>
+<p>Example:</p>
+<pre class="python"><code>animals = [&quot;Dog&quot;, &quot;Cat&quot;, &quot;Cow&quot;] #container
+for animal in animals: #item is defined in the for loop
+  print(f&quot;{animal} was here.&quot;) #not sure why the &#39;f&#39; is necessary?
   
-#incorrect
-if 5 &gt; 2:
-print(&quot;Five is greater than two&quot;)
+  </code></pre>
+<pre><code>## Dog was here.
+## Cat was here.
+## Cow was here.</code></pre>
+</div>
+<div id="while-loop" class="section level3">
+<h3><code>while</code> loop</h3>
+<p>As long as the condition that follows <code>while</code> is TRUE the
+loop will be continuously executed</p>
+<pre class="python"><code>while condition:
+  do_something</code></pre>
+<blockquote>
+<p>The code below will produce an infinate loop! If you run it
+<code>^Ctrl</code> + <code>C</code> to escape (or maybe just don’t run
+it)</p>
+</blockquote>
+<pre class="python"><code>while True:
+  print(&quot;working...&quot;)</code></pre>
+</div>
+<div id="break-to-exit-a-loop" class="section level3">
+<h3><code>break</code> to exit a loop</h3>
+<pre class="python"><code>for item in container:
+  if thing_happens:
+    break #exit the loop</code></pre>
+<p>Example:</p>
+<pre class="python"><code>str = [&quot;G&quot;, &quot;C&quot;, &quot;A&quot;, &quot;G&quot;, &quot;C&quot;, &quot;A&quot;, &quot;G&quot;, &quot;C&quot;, &quot;A&quot;, &quot;T&quot;, &quot;A&quot;]
 
-#correct
-if 0 &lt; 3:
-  print(&quot;duh&quot;)
-  print(&quot;of course zero is less than 3&quot;)
+for letter in str:
+  print(letter)
+  if letter == &quot;T&quot;:
+    break
 
-#incorrect
-if 0 &gt; 3:
-  print(&quot;nope&quot;)
-    print(&quot;this indentation is inconsistent&quot;)</code></pre>
-</div>
-<div id="variables" class="section level2">
-<h2>Variables</h2>
-<p>assign with <code>=</code></p>
-<pre class="python"><code>x = 22
-#python is case sensative, using a capitol X will create a different variable
-X = &quot;Capitol X&quot;
-#X will not overwrite x
 
-cow = &quot;Holy Cow!&quot;
-#note single or double quates can be used the above is equivalent to 
-#cow = &#39;Holy Cow!&#39;
-
-print(x)</code></pre>
-<pre><code>## 22</code></pre>
-<pre class="python"><code>print(X)</code></pre>
-<pre><code>## Capitol X</code></pre>
-<pre class="python"><code>print(cow)</code></pre>
-<pre><code>## Holy Cow!</code></pre>
-<div id="variable-types-classes" class="section level3">
-<h3>Variable <a href="https://www.w3schools.com/python/python_datatypes.asp">types
-(classes)</a></h3>
-<p>to get a variable type (class):</p>
-<pre class="python"><code>print(type(x))</code></pre>
-<pre><code>## &lt;class &#39;int&#39;&gt;</code></pre>
-<pre class="python"><code>print(type(cow))</code></pre>
-<pre><code>## &lt;class &#39;str&#39;&gt;</code></pre>
+  </code></pre>
+<pre><code>## G
+## C
+## A
+## G
+## C
+## A
+## G
+## C
+## A
+## T</code></pre>
+<p>The last “A” isn’t printed because the loop stopped after
+encountering a “T”</p>
 </div>
-<div id="variable-names" class="section level3">
-<h3>Variable names</h3>
-<p>must start with a letter (e.g. <code>a</code>) or an underscore
-<code>_</code></p>
-<pre class="python"><code>#a few examples
-myvar = &quot;works&quot;
-_myvar = &quot;also works&quot;
-myvar2 = &quot;works 2&quot;</code></pre>
-<p>####Camel Case</p>
-<pre class="python"><code>#lowerUpperUpperUpper etc
-myVariableName = &quot;Camel&quot;</code></pre>
-<p>####Snake Case</p>
-<pre class="python"><code>#word_underscore_word_underscore
-my_variable_name = &quot;Snake&quot;</code></pre>
-<p>Above <code>x</code> is an integer and <code>y</code> is a string
-automatically. To specify the data type use casting</p>
-<div id="casting" class="section level4">
-<h4>Casting</h4>
-<pre class="python"><code>x = str(3)    # x will be the string &#39;3&#39;
-y = int(3)    # y will be the integer 3
-z = float(3)  # z will be 3.0 (contains a decimal)</code></pre>
+<div id="continue" class="section level3">
+<h3><code>continue</code></h3>
+<p>if the <code>continue</code> keyword is reached in a loop the current
+iteration is stopped and the next is started</p>
+<pre class="python"><code>for item in container:
+  if thing_happens:
+    continue #go to the next iteration
+  do_a_thing</code></pre>
+<p>Example:</p>
+<pre class="python"><code>for l in &#39;spayed&#39;: #using &#39;l&#39; here for the item instead of &#39;letter&#39;
+  if l == &#39;y&#39;: #if a &#39;y&#39; is encountered upon iteration
+    continue #go do the next thing
+  print(l)
+  
+  </code></pre>
+<pre><code>## s
+## p
+## a
+## e
+## d</code></pre>
+<p>The result is printing ‘spaed’ instead of ‘spayed’</p>
 </div>
+<div id="else-in-loops" class="section level3">
+<h3><code>else</code> in loops</h3>
+<p><code>else</code> is executed when the loop exhausts the list
+(<code>for</code> loops) or when a condition is false
+(<code>while</code> loops) but not when the loop is terminated by
+<code>break</code>. Syntax</p>
+<pre class="python"><code>for item in container:
+  do_a_thing
+else: #belongs to the for loop, there is no if statement
+  do_a_different_thing</code></pre>
+<p>here<br />
+working on <a href="https://docs.python.org/3.3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops">this</a></p>
+<pre class="python"><code>for n in range(2, 10):
+  for x in range(2,n):
+    if n % x == 0: #modulo returns the remainder of dividing two numbers
+      print(n, &#39;equals&#39;, x, &#39;*&#39;, n//x)
+      break
+  else: 
+    print(n, &#39;is a prime number&#39;)
+    </code></pre>
+<pre><code>## 2 is a prime number
+## 3 is a prime number
+## 4 equals 2 * 2
+## 5 is a prime number
+## 6 equals 2 * 3
+## 7 is a prime number
+## 8 equals 2 * 4
+## 9 equals 3 * 3</code></pre>
 </div>
-<div id="multiple-variables" class="section level3">
-<h3>Multiple Variables</h3>
-<pre class="python"><code>a, b, c = &quot;Alligator&quot;, &quot;Baboon&quot;, &quot;Crocadile&quot; 
-print(a)</code></pre>
-<pre><code>## Alligator</code></pre>
-<pre class="python"><code>print(b)</code></pre>
-<pre><code>## Baboon</code></pre>
-<pre class="python"><code>print(c)</code></pre>
-<pre><code>## Crocadile</code></pre>
-</div>
-<div id="unpack-lists-or-tuples" class="section level3">
-<h3>Unpack lists or tuples</h3>
-<pre class="python"><code>yum = [&quot;mango&quot;, &quot;strawberries&quot;, &quot;pineapple&quot;]
-m, s, p = yum
-print(m)</code></pre>
-<pre><code>## mango</code></pre>
-<pre class="python"><code>print(s)</code></pre>
-<pre><code>## strawberries</code></pre>
-<pre class="python"><code>print(p)</code></pre>
-<pre><code>## pineapple</code></pre>
-<p>Can also <code>print</code> the whole list</p>
-<pre class="python"><code>print(m, s, p)</code></pre>
-<pre><code>## mango strawberries pineapple</code></pre>
-<p>To keep the words from runnign together add spaces to the original
-assignments</p>
-<pre class="python"><code>yum = [&quot;mango &quot;, &quot;strawberries &quot;, &quot;pineapple &quot;]
-m, s, p = yum
-print(m, s, p)</code></pre>
-<pre><code>## mango  strawberries  pineapple</code></pre>
-</div>
-</div>
-<div id="comments" class="section level2">
-<h2>Comments</h2>
-<pre class="python"><code>#will not be executed
-
-&quot;&quot;&quot;
-create a string literal for 
-easy multiline comments
-python will ignore this
-because it wasn&#39;t assigned to a variable
-&quot;&quot;&quot;</code></pre>
-<pre><code>## &quot;\ncreate a string literal for \neasy multiline comments\npython will ignore this\nbecause it wasn&#39;t assigned to a variable\n&quot;</code></pre>
-</div>
-<div id="operators" class="section level2">
-<h2><a href="https://www.w3schools.com/python/python_operators.asp">Operators</a></h2>
 </div>
 
 

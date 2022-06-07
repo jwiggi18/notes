@@ -1,0 +1,118 @@
+---
+title: "Iteration"
+author: "JM_Wiggins"
+date: '2022-06-07'
+output: html_document
+---
+
+## Python Iteration
+iteration - a set of instructions is repeated until a specific condition is met  
+loop - a block of code the will repeat over and over again  
+  
+  
+### `for` loop
+Uses keywords `for` and `in`  
+Syntax:
+```{python eval=FALSE}
+for item in containter:
+  do_something
+
+```
+
+Example:
+```{python}
+animals = ["Dog", "Cat", "Cow"] #container
+for animal in animals: #item is defined in the for loop
+  print(f"{animal} was here.") #not sure why the 'f' is necessary?
+  
+  
+```
+
+### `while` loop
+As long as the condition that follows `while` is TRUE the loop will be continuously executed
+```{python eval=FALSE}
+while condition:
+  do_something
+  
+  
+```
+
+> The code below will produce an infinate loop! If you run it `^Ctrl` + `C` to escape (or maybe just don't run it)
+
+```{python eval=FALSE}
+while True:
+  print("working...")
+  
+```
+
+### `break` to exit a loop
+```{python eval=FALSE}
+for item in container:
+  if thing_happens:
+    break #exit the loop
+  
+```
+
+Example:
+```{python}
+str = ["G", "C", "A", "G", "C", "A", "G", "C", "A", "T", "A"]
+
+for letter in str:
+  print(letter)
+  if letter == "T":
+    break
+
+
+  
+```
+The last "A" isn't printed because the loop stopped after encountering a "T"
+
+### `continue`
+if the `continue` keyword is reached in a loop the current iteration is stopped and the next is started
+```{python eval=FALSE}
+for item in container:
+  if thing_happens:
+    continue #go to the next iteration
+  do_a_thing
+  
+  
+```
+
+Example:
+```{python}
+for l in 'spayed': #using 'l' here for the item instead of 'letter'
+  if l == 'y': #if a 'y' is encountered upon iteration
+    continue #go do the next thing
+  print(l)
+  
+  
+```
+The result is printing 'spaed' instead of 'spayed'  
+  
+### `else` in loops 
+`else` is executed when the loop exhausts the list (`for` loops) or when a condition is false (`while` loops) but not when the loop is terminated by `break`.
+Syntax
+
+```{python eval=FALSE}
+for item in container:
+  do_a_thing
+else: #belongs to the for loop, there is no if statement
+  do_a_different_thing
+  
+  
+```
+
+here  
+working on [this](https://docs.python.org/3.3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
+```{python}
+for n in range(2, 10):
+  for x in range(2,n):
+    if n % x == 0: #modulo returns the remainder of dividing two numbers
+      print(n, 'equals', x, '*', n//x)
+      break
+  else: 
+    print(n, 'is a prime number')
+    
+```
+
+
