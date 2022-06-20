@@ -52,7 +52,15 @@ if a == b: #statement is FALSE
 else: 
   print('no')
 ```
-  
+use `f-strings` to print to the screen
+```{python}
+MIN_DRIVING_AGE = 18
+if age >= MIN_DRIVING_AGE:
+  print(f'{name} is allowed to drive')
+else: 
+  print(f'{name} is not allowed to drive')
+```
+
 ## `elif` can only be used after an `if` statement and can be used as many times as needed  
 ```{python eval=FALSE}
 if what_to_evaluate: #semicolon here too

@@ -5,12 +5,14 @@ date: '2022-06-03'
 output: html_document
 ---
 
+iPython: interactive python, part of the Jupiter ecosystem  
+
 ## Python command line
 to enter: $python3
 to exit: exit()
 to exit
 
-to create a python file use extension `.py`
+to create a python file/script use extension `.py`
 to execute:
 
 while in python command line (have done the steps above)
@@ -71,17 +73,44 @@ print(cow)
 ### Variable [types (classes)](https://www.w3schools.com/python/python_datatypes.asp)
 to get a variable type (class):
 ```{python}
-print(type(x))
-print(type(cow))
+type(x) #print is not required
+type(cow)
 ```
 
+## Different data types produce different behavior
+```{python}
+2 + 3
+
+'ab' + 'cd'
+```
+a `float` (floating point) us a number that has both an integer and a fractional part: e.g. `1.1`  
+  
 ### Variable names
 must start with a letter (e.g. `a`) or an underscore `_`
 ```{python}
-#a few examples
+#a few examples of strings
 myvar = "works"
 _myvar = "also works"
 myvar2 = "works 2"
+
+#booleans
+dog = False
+cat = True
+```
+
+## Convert variables:
+```{python}
+integer_variable = 34
+#convert to string
+str(integer_variable)
+```
+
+## Integers can be multiplied but not added to a number
+```{python}
+#works
+"I said " + ("Hey " * 2) + "Hey!"
+#throws an error
+"The correct answer to this multiple choice exercise is answer number " + 2
 ```
 
 ####Camel Case
@@ -148,4 +177,13 @@ because it wasn't assigned to a variable
 ```
 
 ## [Operators](https://www.w3schools.com/python/python_operators.asp)
+Exponentiation: ** raises the number on its left to the number on its right  
+```{python}
+4**2
+```
+Modulo: % returns the remainder of the division of the number on its left by the number on its right
+```{python}
+18 % 7
+```
+
 

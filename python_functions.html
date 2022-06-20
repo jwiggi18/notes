@@ -395,6 +395,16 @@ get a list of python keywords in python session:</p>
 
 print(hyp_sq(918,846)) #to print the results to the console</code></pre>
 <pre><code>## 1558440</code></pre>
+<p>Function Example with <a href="https://docs.python.org/3/whatsnew/3.6.html#pep-498-formatted-string-literals"><code>f-strings</code></a></p>
+<pre class="python"><code>def allowed_driving(name, age):
+    &quot;&quot;&quot;Print&#39;{name}is allowed to drive&#39; or &#39;{name} is not allowed to drive&#39; based on check     against the MIN_DRIVING_AGE constant&quot;&quot;&quot;
+    MIN_DRIVING_AGE = 18
+    if age &gt;= MIN_DRIVING_AGE:
+        print(f&#39;{name} is allowed to drive&#39;)
+    else: 
+        print(f&#39;{name} is not allowed to drive&#39;)
+        
+        </code></pre>
 <p>if <code>what_to_evaluate</code> is an <code>if</code>,
 <code>else</code>, <code>elif</code>, or a <code>for</code> loop a
 semicolon must also be included after the
@@ -416,6 +426,40 @@ semicolon must also be included after the
   
 print(animalNames(&#39;a&#39;)) #note that a had to be in &#39;&#39; to work</code></pre>
 <pre><code>## Aardvark</code></pre>
+<p>Looping through a dictionary:</p>
+<pre class="python"><code>GAME_STATS = dict(sara=0, bob=1, tim=5, julian=3, jim=1)
+
+
+def print_game_stats(games_won):
+    &quot;&quot;&quot;Loop through games_won&#39;s dict (key, value) pairs (dict.items)
+       printing (print, not return) how many games each person has won,
+       pluralize &#39;game&#39; based on number.
+
+       Expected output (ignore the docstring&#39;s indentation):
+
+       sara has won 0 games
+       bob has won 1 game
+       tim has won 5 games
+       julian has won 3 games
+       jim has won 1 game
+
+       (Note that as of Python 3.7 - which we&#39;re using atm - dict insert order
+       is retained so no sorting is required for this Bite.)
+    &quot;&quot;&quot;
+    for k, v in games_won.items():
+        if v &gt;= 2 or v == 0:
+            print(&#39;{} has won {} games&#39;.format(k, str(v)))
+        else:
+            print(&#39;{} has won {} game&#39;.format(k, str(v)))
+    pass
+ 
+  
+print_game_stats(GAME_STATS)</code></pre>
+<pre><code>## sara has won 0 games
+## bob has won 1 game
+## tim has won 5 games
+## julian has won 3 games
+## jim has won 1 game</code></pre>
 </div>
 </div>
 

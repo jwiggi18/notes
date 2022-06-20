@@ -1,0 +1,32 @@
+---
+title: "Python lists"
+author: "JM_Wiggins"
+date: '2022-06-20'
+output: html_document
+---
+
+### Python lists  
+can be any `type`
+build a list with square brackets `[]`
+```{python}
+[5, 23, 69, 55, 93]
+```
+  
+Can assign to a variable:
+```{python}
+my_list = [5, 23, 69, 55, 93]
+```
+  
+Can contain multiple types:
+```{python}
+fav_nums = ['john', 22, 'jack', 55, 'elisa', 100]
+```
+  
+Lists can contain lists:
+```{python}
+fav_nums2 = [['john', 22],
+            ['jack', 55], 
+            ['elisa', 100]]
+```
+
+

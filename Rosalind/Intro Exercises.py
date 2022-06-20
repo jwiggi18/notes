@@ -1,4 +1,8 @@
+import this
+
+from numpy import square
 python3
+
 """
 problem
 Given: Two positive integers a and b, each less than 1000.
@@ -16,18 +20,13 @@ Return: The integer corresponding to the square of the hypotenuse of the right t
 #c = sqrt{a^2 + b^2}
 #then square c, which is undoing the sqrt
 
-#to get problem answer simply
+#to get problem answer simply eliminate the sqrt
 def hyp_sq(a,b):
-    sum = a + b
+    sum = a**2 + b**2
     return sum
 
-
-def add_numbers(x, y):
-   sum = x + y
-   return sum
+print(hyp_sq(918,846))
 
 
-print(add_numbers(5, 7)
 
 
-hypSq(5, 7)
