@@ -7,6 +7,8 @@ coding notes to self, maybe eventually turned into teaching notes
 
 [python_functions](https://jwiggi18.github.io/notes/python_functions.html)
 
+[python_iteration](https://jwiggi18.github.io/notes/python_iteration.html)
+
 currently only notes about python
 
 to see some info on R: https://github.com/jwiggi18/intro_genomics
