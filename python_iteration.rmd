@@ -4,6 +4,7 @@ author: "JM_Wiggins"
 date: '2022-06-07'
 output: html_document
 ---
+[python.org](https://www.python.org/)  
 
 ## Python Iteration
 iteration - a set of instructions is repeated until a specific condition is met  
@@ -68,7 +69,7 @@ for letter in str:
 The last "A" isn't printed because the loop stopped after encountering a "T"
   
   
-A function using `while` `input` elif` `lower()` and `in`
+A function using `while` [`input`](https://www.codingem.com/python-how-to-ask-for-user-input/#:~:text=To%20ask%20for%20user%20input%20in%20Python%2C%20use,built%2Din%20input()%20function.&text=In%20addition%20to%20asking%20for,a%20valid%20input%20is%20given) `elif` `lower()` and `in`
 ```{python}
 VALID_COLORS = ['blue', 'yellow', 'red']
 
