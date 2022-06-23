@@ -41,3 +41,10 @@ print(s_MESSAGE)
 js_MESSAGE = '|'.join(s_MESSAGE)
 
 print(js_MESSAGE)
+
+
+def split_in_columns(message=MESSAGE):
+    """Split the message by newline (\n) and join it together on '|'
+       (pipe), return the obtained output string"""
+    lines = message.split('\n')
+    return '|'.join(lines)
