@@ -124,3 +124,36 @@ def slice_and_dice(text: str = text) -> list:
     return [line.split()[-1].rstrip(".!")
             for line in text.strip().split('\n')
             if line.lstrip()[0] in ascii_lowercase]
+
+hw = 'hello world'
+#convert to list
+lhw = hw.split()
+type(lhw)
+
+#count vowels
+vowels = 'aeiou'
+def new_func(hw, vowels):
+    for vowel in vowels:
+    #replace vowels with '*'
+        txt = hw.replace(vowel, '*')   
+    print(txt)
+
+new_func(hw, vowels)
+
+
+txt = "A!!!,Quick,brown#$,fox,ju%m%^ped,ov&er&),th(e*,lazy,d#!og$$$"
+
+
+def processString(txt):
+  specialChars = "!#$%^&*()"
+  for specialChar in specialChars:
+    txt = txt.replace(specialChar, '')
+  print(txt)  # A,Quick,brown,fox,jumped,over,the,lazy,dog
+  txt = txt.replace(',', ' ')
+  print(txt)  # A Quick brown fox jumped over the lazy dog
+
+processString(txt)
+
+
+
+
