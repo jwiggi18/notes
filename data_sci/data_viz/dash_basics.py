@@ -1,3 +1,8 @@
+#for functionality
+# python3 -m pip install packaging
+# python3 -m pip install pandas dash
+# pip3 install httpx==0.20 dash plotly
+
 # Import required packages
 import pandas as pd
 import plotly.express as px
