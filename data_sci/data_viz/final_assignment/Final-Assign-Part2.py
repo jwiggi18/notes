@@ -35,19 +35,22 @@ year_list = [i for i in range(1980, 2024, 1)]
 # Create the layout of the app
 app.layout = html.Div([
     #TASK 2.1 Add title to the dashboard
-    html.H1("Automobile Sales Statistics Dashboard", style={'textAlign': 'center', 'color': '#503D36', 'font-size': 24}),#Include style for title
+    html.H1("Automobile Sales Statistics Dashboard", style={'textAlign': 'center', 'color': '#503D36', 'font-size': 24}),
     #TASK 2.2: Add two dropdown menus
     
     #First dropdown ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     html.Div([
         html.Label("Select Statistics:"),
         dcc.Dropdown(
-            id='...........',
-            options=...................,
-            value='.................',
-            placeholder='.................'
+            id='dropdown-statistics',
+            options=[
+                {'label':'Yearly Statistics', 'value': 'Yearly Statistics'},
+                {'label':'Recession Period Statistics', 'value': 'Recession Period Statistics'}
+                ],
+            placeholder='Select a report type',
+            value='Select Statistics'
         )
-    ], style={}),
+    ], style={'width': '80%', 'padding': '3px', 'font-size': '20px', 'text-align-last': 'center'}),
     #First dropdown end ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
     #Second dropdown *******************************
@@ -55,15 +58,16 @@ app.layout = html.Div([
         dcc.Dropdown(
             id='select-year',
             options=[{'label': i, 'value': i} for i in year_list],
-            value='...................'
+            placeholder='Select-year',
+            value='Select-year'
         )
-    ], style={}),
+    ], style={'width': '80%', 'padding': '3px', 'font-size': '20px', 'text-align-last': 'center'}),
     #Second dropdown end ****************************
     
     #Output display Div ++++++++++++++++++++++
     html.Div([#TASK 2.3: Add a division for output display
     
-        html.Div(id='..........', className='..........', style={'display':'flex'}),
+        html.Div(id='output-container', className='chart-grid', style={'display':'flex'}),
         
         ])
     #End Output display Div +++++++++++++++++++
